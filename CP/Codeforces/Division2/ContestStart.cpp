@@ -1,36 +1,30 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+long long int max(long long int a, long long int b){
+    if(a>=b)
+    return a;
+    else
+    return b;
+}
+long long int min(long long int a, long long int b){
+    if(a>=b)
+    return b;
+    else
+    return a;
+}
 
 int main(){
 
     int k;
     cin>>k;
     while(k--){
-    long long n,x,t;
-    long long sum=0;
+    
+    long long int n,x,t;
     cin>>n>>x>>t;
-
-    if(x>t){
-    cout<<0<<endl;
-    continue;
-    }
-
-    sum=(n*(n-1))/2;
-    for(long long i=0;i<n*x;i+=x){
-        
-        long long rem = ((n-1)*x)%(i+t);
-        long long q=((n-1)*x)/(i+t);
-
-        if(q==0)
-        break;
-
-        if(q>1 || (q==1 && rem!=0))
-        sum=sum-q;
-    }
-    cout<<sum<<endl;
+    int m=t/x;
+    cout<<(max(0,n-m)*m) + (min(n-1,m-1) * (min(n,m))/2)<<endl;
     }
     return 0;
-
 }
 
