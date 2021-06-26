@@ -8,21 +8,20 @@ int main(){
         int n;
         cin>>n;
 
-        unordered_map <int,int> mp(n);
-         int c=0;
-        for(int i=0;i<n;i++){
+        vector<int> a(2*n+1,-1);
+            
+        for(int i=1;i<=n;i++){
             int x;
             cin>>x;
-          
-            // search in map
-            for(int j=0;j<i;j++){
-                if((i+j+2)%x==0){
-                if(mp[(i+j+2)/x]==j){
+            a[x]=i;
+        }
+
+        int c=0;
+        for(int i=3;i<2*n;i++){
+            for(int j=1;j*j<i;j++){
+                if(i%j==0 && j*j!=i && a[j]!=-1 && a[i/j]!=-1 && a[j]+a[i/j]==i)
                 c++;
-                }
-                }
             }
-            mp.insert({x,i});
         }
     cout<<c<<endl;
     }
