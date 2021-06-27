@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+#define FAST1 ios_base::sync_with_stdio(false);
+#define FAST2 cin.tie(NULL);
 
 int main(){
 
