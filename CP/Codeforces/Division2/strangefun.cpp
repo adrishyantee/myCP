@@ -1,38 +1,25 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define int long long
 using namespace std;
-const unsigned int M = 1000000007;
+int t,n;
+const int M=1e9+7;
 
-
-int findmin(long long n)
-{
-    if(n==1)
-    return 2;
-    if(n==2)
-    return 3;
-
-int i=2;
-    while(i>=0){
-    if(n%i!=0)
-    return i;
-    i++;
-    }
-    return 0;
+int gcd(int x,int y){
+	return y?gcd(y,x%y):x;
 }
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int t;cin>>t;
-
-    while(t--){
-        long long n;
-        cin>>n;
-        int sum=0;
-
-    for(int i=1;i<=n;i++){
-        sum = findmin(i);
-    }
-    cout<<sum%M<<endl;
-    }
-    return 0;
+int LCM(int x,int y){
+	return x/gcd(x,y)*y;
+}
+signed main(){
+	scanf("%lld",&t);
+	while(t--){
+		scanf("%lld",&n);
+		int G=1,ans=0;
+		for(int i=1;G<=n;++i){
+			G=LCM(G,i);
+			if(G>n)break;
+			ans+=n/G;
+		}
+		printf("%lld\n",(ans+n)%M);
+	}
 }

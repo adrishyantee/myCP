@@ -1,15 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool isPower(int x, int y)
-{
-    // logarithm function to calculate value
-    int res1 = log(y) / log(x);
-    double res2 = log(y) / log(x); // Note : this is double
- 
-    // compare to the result1 or result2 both are equal
-    return (res1 == res2);
-}
-
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -17,24 +7,35 @@ int main(){
     int t;cin>>t;
 
     while(t--){
-        int n,a,b;
+        long long n,a,b;
         cin>>n>>a>>b;
       
 
-        if(isPower(a,n))
-        cout<<"Yes"<<endl;
+        if(n==1){
+            cout<<"Yes"<<endl;
+            continue;
+        }
 
-        else if(isPower(a,n-b))
-        cout<<"Yes"<<endl;
-
-        else if((n%(1+b))==0 || isPower(a,n/(1+b)))
-        cout<<"Yes"<<endl;
-
-        else if((n-1)%b==0)
-        cout<<"Yes"<<endl;
-
-        else 
-        cout<<"No"<<endl;
+        if(a==1){
+            if((n-1)%b==0)
+            cout<<"Yes"<<endl;
+            else
+            cout<<"No"<<endl;
+             continue;
+        }
+       long long s=1; int flag=0;
+       while(s<=n){
+           if((n-s)%b==0){
+               flag=1;
+               break;
+           }
+           s*=a;
+       }
+       if(flag){
+           cout<<"Yes"<<endl;
+       }
+       else
+       cout<<"No"<<endl;
     }
 
     return 0;
