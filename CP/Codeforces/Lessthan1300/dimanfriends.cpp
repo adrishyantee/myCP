@@ -1,24 +1,29 @@
-#include <iostream>
 
-using namespace std;
+#include <bits/stdc++.h>
 
 int main()
 {
-    int n, f, total(0), answer(0);
-    cin >> n;
-    for (int i = 0; i < n; ++i)
+    int no_of_friends;
+    scanf("%d", &no_of_friends);
+
+    int other_fingers = 0;
+    for(int i = 1; i <= no_of_friends; i++)
     {
-        cin >> f;
-        total += f;
+        int finger_i;
+        scanf("%d", &finger_i);
+
+        other_fingers += finger_i;
     }
-    
-    for (int i = 1; i <= 5; ++i)
+
+    const int NO_OF_FINGERS = 5;
+    int no_of_choices = 0, no_of_people = no_of_friends + 1;
+
+    for(int dima_fingers = 1; dima_fingers <= NO_OF_FINGERS; dima_fingers++)
     {
-        if ((total + i) % (n + 1) != 1)
-        {
-            answer += 1;
-        }
+        int total_fingers = other_fingers + dima_fingers;
+        no_of_choices += (total_fingers%no_of_people != 1);
     }
-    cout << answer << endl;
+
+    printf("%d\n", no_of_choices);
     return 0;
 }
