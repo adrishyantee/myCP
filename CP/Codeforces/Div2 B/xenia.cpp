@@ -1,11 +1,10 @@
-#include <cstdio>
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
     int n, m;
-    scanf("%d%d", &n, &m);
+    scanf("%d %d", &n, &m);
 
     int loc = 1;
     long long int ans = 0;
