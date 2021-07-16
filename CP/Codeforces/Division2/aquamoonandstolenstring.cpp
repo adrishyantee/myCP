@@ -1,43 +1,30 @@
-#include <bits/stdc++.h>
-#define int long long
-using namespace std;
-
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t;cin>>t;
-    
-    for(int i=0;i<t;i++){
-        int n,m; cin>>n>>m;
-
-        vector<unordered_map<char,int>>mp(m);
-        
-        for(int j=0;j<n;j++){
-            string x;
-            cin>>x;
-
-            for(int k=0;k<m;k++){
-                if(mp[j].find(x[k])!=mp[j].end())
-                mp[k][x[k]] = mp[k][x[k]]+1;
-                else
-                  mp[j].insert(make_pair(k,x[k]));
-            }
-        }
-        for(int k=0;k<n-1;k++){
-            string x;
-            cin>>x;
-            for(int j=0;j<m;j++){
-                mp[j][x[j]] = mp[j][x[j]]-1;
-            }
-        }
-        string s="";
-        for(int k =0;k<m;k++){
-            for(auto &p: mp[k]){
-                if(p.second>0)
-                s+=p.first;
-            }
-        }
-        cout<<s<<endl;
-        cout<<flush;
+#include <cstdio>
+const int Maxn=1000000;
+char s[Maxn+5];
+char ans[Maxn+5];
+int n,m;
+void solve(){
+    scanf("%d%d",&n,&m);
+    n=(n<<1)-1;
+    for(int i=1;i<=m;i++){
+        ans[i]=0;
     }
+    for(int i=1;i<=n;i++){
+        scanf("%s",s+1);
+        for(int j=1;j<=m;j++){
+            ans[j]^=s[j];
+        }
+    }
+    for(int i=1;i<=m;i++){
+        putchar(ans[i]);
+    }
+    putchar('\n');
+}
+int main(){
+    int T;
+    scanf("%d",&T);
+    while(T--){
+        solve();
+    }
+	return 0;
 }
