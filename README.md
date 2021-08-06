@@ -34,7 +34,7 @@
 - [X] 3. Modular Inverse of a number
 - [X] 3. Modular Exponentiation
 - [X] 4. Chinese Remainder Theorum
-5. Factorial Modulo Mod
+- [X] 5. Factorial Modulo Mod
 6. Finding nCr and nPr for queries (constant time) 
 7. Inclusion Exclusion Principle (combinatorics problems) {hackerearth has wonderful bunch} {codeforces}
 
