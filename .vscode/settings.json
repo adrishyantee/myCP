@@ -5,6 +5,8 @@
         "*.tcc": "cpp",
         "string_view": "cpp",
         "ostream": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp"
     }
 }
