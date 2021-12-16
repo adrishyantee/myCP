@@ -35,7 +35,7 @@
 - [X] 3. Modular Exponentiation
 - [X] 4. Chinese Remainder Theorum
 - [X] 5. Factorial Modulo Mod
-6. Finding nCr and nPr for queries (constant time) 
+- [X] 6. Finding nCr and nPr for queries (constant time) 
 7. Inclusion Exclusion Principle (combinatorics problems) {hackerearth has wonderful bunch} {codeforces}
 
 ----
@@ -50,7 +50,7 @@
 6. Number of subarrays with XOR as zero(not an algorithm but a must do problem)
 (hackerearth has a very good tutorial on bit manipulation, coding blocks too has a proper video on bit) {for problems visit hackerearth} 
 7. Problems related to greedy algorithm tag
-8. Kadane's algorithm and problems related to them
+- [X]8. Kadane's algorithm and problems related to them
 9. Job sequencing and activity selection problem 
 (after doing 8 and 9 go to codeforces and solve problems with greedy tag on it)
 
@@ -60,18 +60,18 @@
 - [X] 1. start with basic problems like finding factorial and all.
 - [X] 2. implement binary search 
 - [X] 3. implement modular exponentiation using recurison
-4. solve recursion problems like finding subset with given and others to get a stronggrip
-5. Learn about merge sort and quick sort 
-6. solve problems related to merge sort
-7. Do backtracking problems like sudoko and N Queen, it will help you when you want do DP Path problems
+- [X] 4. solve recursion problems like finding subset with given and others to get a stronggrip
+- [X] 5. Learn about merge sort and quick sort 
+- [X] 6. solve problems related to merge sort
+- [X] 7. Do backtracking problems like sudoko and N Queen, it will help you when you want do DP Path problems
 
 (for recursion you can refer to leetcode or gfg's practice where u will find recursion and backtracking problems) 
 
 **After Recursion:**
 1. Meet in the middle algorithm and problems related to it. 
 2. Divide and conquer problems{highly recommended to use codeforces only for this} 
-3. Next greater element and next smaller element using stack
-4. porblems related to parenthesis. 
+- [X] 3. Next greater element and next smaller element using stack
+- [X] 4. porblems related to parenthesis. 
 5. largest rectangular area in histogram. (concept is used in a lot of problems) 
 6. Problems related to Heap(Priority Queue) {although this gets under the greedy category but by priority queue will help you learn an inbuilt stl)
 
@@ -92,9 +92,9 @@ now the real advanced parts and the game decider
 ----
 
 **Tree Algorithm :**
-1. Tree/Graph representation
-2. DFS/BFS Traversal in Graph/Tree
-3. Basic stuffs(diameter of tree, height of tree, level of tree)
+- [X] 1. Tree/Graph representation
+- [X] 2. DFS/BFS Traversal in Graph/Tree
+- [X] 3. Basic stuffs(diameter of tree, height of tree, level of tree)
 4. Euler Tour of Tree(Learn and solve problems)
 5. Finding LCA using Euler Tour(14:00){efficient solution uses segment trees)
 6. Finding LCA using Binary Lifting.
@@ -105,12 +105,12 @@ now the real advanced parts and the game decider
 ----
 
 **Graphs:**
-1. Connected Components.
-2. Topological Sort.
-3. Cycle Detection in Graph
-4. Bipartite Check in graph
+- [X] 1. Connected Components.
+- [X] 2. Topological Sort.
+- [X] 3. Cycle Detection in Graph
+- [X] 4. Bipartite Check in graph
 5. SCC using Kosaraju’s  algorithm
-6. Dijkstra’s Algorithm
+- [X] 6. Dijkstra’s Algorithm
 7. Bellman Ford Algorithm
 Sources for learning :hackerearth and cpalgorithm blogs  
 (25-30 problems on the avove topics,SPOJ and codeforces,hackerearth too)
