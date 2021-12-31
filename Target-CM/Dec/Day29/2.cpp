@@ -1,10 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long 
-
-
-bool lexicosmall(string s, string r){
-    return (r<=s);
+ 
+ 
+string lexicosmall(string s, string r){
+    if(r<=s)
+    return r;
+    else
+    return s;
 }
 int main(){
     ll t; cin>>t;
@@ -14,21 +17,16 @@ int main(){
         string rev="";
         string ans="";
         string f="";
+        string store="aaaaaaaa";
         ll i=0;
         for(;i<n;i++){
             ans+=s[i];
             rev = s[i]+rev;
             f = ans+rev;
-            if(i==n-1)
-            break;
-            else if(lexicosmall(s,f))
-            {
-                cout<<f<<endl;
-                break;
-            }
+
+            store = lexicosmall(store,f);
         }  
-        if(i==n-1)
-        cout<<f<<endl;      
+        cout<<store<<endl;      
     }
     return 0;
 }
