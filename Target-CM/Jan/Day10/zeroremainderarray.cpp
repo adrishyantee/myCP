@@ -4,29 +4,33 @@ using namespace std;
 
 int main(){
 
+    ll t;cin>>t;
+    while(t--){
+
     ll n,k; cin>>n>>k;
     vector<ll> a(n);
     map<ll,ll> mp;
 
     for(ll &i:a){
     cin>>i;
-    if(i%k!=0)
-    mp[i]++;
+    mp[i%k]++;
     }
 
-    if(mp.size()==n)
+    if(mp.size()==1 && mp[0]==n)
     cout<<0<<endl;
     else{
-    ll x=0, moves=0;
-    
-    sort(a.begin(),a.end());
-
-    x++;
-    moves++;
-
-    for(auto i:mp){
-        
+        pair<ll,ll> ans={0,0};
+        for(auto m:mp){
+            ll cnt = m.second;
+            ll highestx = cnt*k-m.first;
+            if(highestx>=ans.second && m.first!=0){
+            ans.second=highestx;
+            ans.first+=cnt;
+            }
+        }
+        cout<<ans.second+1<<endl;
+    }
     }
 
-    }
+    return 0;
 }
