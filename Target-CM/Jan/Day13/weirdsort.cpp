@@ -19,20 +19,32 @@ int main(){
         for(ll i=0;i<p;i++)
         {
             ll x; cin>>x;
-            parr[x]++;
+            parr[x-1]++;
         }
-        ll flag=0;
 
-        for(ll i=0;i<n-1;i++){
-            if(arr[i]>arr[i+1] && parr[i+1]==0){
-            flag=1;
-            break;
-            }
-            else if(arr[i]>arr[i+1] && parr[i+1]!=0){
+        while(true){
+             ll flag=0;
+        for(ll i=0;i<n;i++){
+            if(parr[i]!=0 && arr[i]>arr[i+1]){
+                flag=1;
                 swap(arr[i],arr[i+1]);
             }
         }
-        if(flag==1)
+        if(flag==0){
+            break;
+        }
+        }
+        cout<<endl;
+        
+        ll flag=1;
+        for(ll i=0;i<n-1;i++){
+            if(arr[i]>arr[i+1])
+            {
+                flag=0;
+                break;
+            }
+        }
+        if(flag==0)
         cout<<"NO"<<endl;
         else
         cout<<"YES"<<endl;  
