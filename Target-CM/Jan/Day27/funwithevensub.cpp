@@ -99,23 +99,8 @@ void solve()
 {
     ll t; cin>>t;
     while(t--) {
-        int n; cin >> n;
-        int x = 1e9 + 7, pos = -1;
-        for (int i = 0; i < n; ++i) {
-            int a; 
-            cin >> a;
-            if (a < x) {
-            x = a;
-            pos = i;
-           }
-        }
-        cout << n - 1 << endl;
+       
 
-        for (int i = 0; i < n; ++i) {
-            if (i == pos) 
-            continue;
-            cout << pos + 1 << ' ' << i + 1 << ' ' << x << ' ' << x + abs(i - pos) << endl;
-    }
     }
 }
 int main()

@@ -99,23 +99,23 @@ void solve()
 {
     ll t; cin>>t;
     while(t--) {
-        int n; cin >> n;
-        int x = 1e9 + 7, pos = -1;
-        for (int i = 0; i < n; ++i) {
-            int a; 
-            cin >> a;
-            if (a < x) {
-            x = a;
-            pos = i;
-           }
-        }
-        cout << n - 1 << endl;
+        ll n; cin >> n;
+        vector<int> a(n),b(n);
+        for(ll i=0;i<n;i++)
+        cin>>a[i];
+        for(ll i=0;i<n;i++)
+        cin>>b[i];
 
-        for (int i = 0; i < n; ++i) {
-            if (i == pos) 
-            continue;
-            cout << pos + 1 << ' ' << i + 1 << ' ' << x << ' ' << x + abs(i - pos) << endl;
-    }
+        for(ll i=0;i<n;i++){
+            if(a[i]>b[i])
+            swap(a[i],b[i]);
+        }
+
+        auto itr = *max_element(a.begin(),a.end());
+        auto itr2 = *max_element(b.begin(),b.end());
+
+        cout<<itr*itr2<<endl;
+
     }
 }
 int main()
