@@ -94,13 +94,69 @@ ll factorial(ll n)
     }
     return ans;
 }
+// ll setBitNumber(ll n)
+// {
+//     if (n == 0)
+//         return 0;
+ 
+//     int msb = 0;
+//     n = n / 2;
+//     while (n != 0) {
+//         n = n / 2;
+//         msb++;
+//     }
+ 
+//     return (1 << msb);
+// }
+ll getbit (ll n){
+    ll l = 1, h = 1e9+1;
+
+    ll ans = 0;
+
+    while(l<=h){
+        ll mid = l+(h-l)/2;
+
+        if(n<mid*mid-1){
+            h=mid-1;
+            ans=mid*mid-1;
+        }
+        else{
+        l=mid+1;
+        }
+    }
+    return ans;
+}
+ll reverse(ll n){
+    ll num =0, count=0;
+    while(n>0){
+        if(n%2==0) 
+        num+=(1ll<<count);
+        n/=2, count++;
+        if(n<=0)
+        break;
+    }
+    return num;
+}
 
 void solve()
 {
     ll t; cin>>t;
-    while(t--) {
-       
 
+    while(t--) {
+        ll n; cin>>n;
+        ll sum =0;
+        while (n>0)
+        {
+           ll a = reverse(n);
+           ll b = n;
+           if((b&(b+1))==0) 
+           b--;
+           ll val = ((b*(b+1))/2)-((a*(a-1))/2);
+           sum+=(val*2);
+           n =a-1;
+        }
+        
+        cout<<sum<<endl;
     }
 }
 int main()
