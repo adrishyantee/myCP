@@ -13,7 +13,10 @@
         "unordered_set": "cpp",
         "array": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "map": "cpp",
+        "deque": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
