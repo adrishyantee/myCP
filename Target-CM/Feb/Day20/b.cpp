@@ -135,41 +135,27 @@ int FindMinMoves(vector<int> A, vector<int> B)
 
 void solve()
 {
-
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
-
-   ll c=0;
+   ll n; cin>>n;
+   vector<ll> arr(n);
 
    for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
+       cin>>arr[i];
    }
 
-   sort(arr.begin(),arr.end());
-   vector<ll> ans;
-
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
+   for(ll i=0;i<n-1;i++){
+       if(arr[i]>arr[i+1]){
+           if(arr[n-2]-arr[n-1]<=arr[n-2] && arr[n-2]<=arr[n-1]){
+               cout<<n-2<<endl;
+               for(ll j=0;j<n-2;j++)
+               cout<<j+1<<" "<<n-1<<" "<<n<<endl;          
+               }
+            else
+            cout<<-1<<endl;
+            return;
+       }
    }
+   cout<<0<<endl;
 
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
-    }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
-   for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
-   }
-   cout<<endl;
-}
 }
 int main()
 {
@@ -177,6 +163,8 @@ int main()
     freopen("Error.txt", "w", stderr);
 #endif
     fastio();
+    ll t; cin>>t;
+    while(t--)
     solve();
 #ifndef ONLINE_JUDGE
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";

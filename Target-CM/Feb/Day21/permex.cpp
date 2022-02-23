@@ -136,40 +136,54 @@ int FindMinMoves(vector<int> A, vector<int> B)
 void solve()
 {
 
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
-
-   ll c=0;
-
-   for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
+   ll t; cin>>t;
+   while(t--){
+   ll n; string s;
+   cin>>n>>s;
+   if(n==1){
+       if(s[0]=='0'){
+           cout<<"No"<<endl;
+       }
+       else{
+           cout<<"Yes"<<endl;
+           cout<<0<<endl;
+       }
+       continue;
    }
-
-   sort(arr.begin(),arr.end());
+   if(n==2){
+       if(s[0]=='0'||s[1]=='0'){
+           cout<<"No"<<endl;
+       }
+       else{
+           cout<<"Yes"<<endl;
+           cout<<"0 1"<<endl;
+       }
+       continue;
+   }
+   if(s[0]=='0' || s[1]=='0' || s.back()=='0'){
+       cout<<"No"<<endl;
+       continue;
+   }
    vector<ll> ans;
+   ans.push_back(0);
 
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
+   ll count = 1;
+   for(ll i=2;i<s.length()-1;i++){
+       if(s[i]=='0'){
+           ans.push_back(i);
+       }
+       else{
+           ans.push_back(count);
+           count=i;
+       }
    }
-
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
-    }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
+   cout<<"Yes"<<endl;
    for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
+       cout<<ans[i]<<" ";
    }
-   cout<<endl;
-}
+   cout<<count<<endl;
+   }
+
 }
 int main()
 {

@@ -135,41 +135,24 @@ int FindMinMoves(vector<int> A, vector<int> B)
 
 void solve()
 {
+    ll n; cin>>n;
+    vector<ll> a(10,1);
 
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
-
-   ll c=0;
-
-   for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
-   }
-
-   sort(arr.begin(),arr.end());
-   vector<ll> ans;
-
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
-   }
-
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
+    ll k =1;
+    ll x=0;
+    while(k<n){
+        ll ok = a[x%10];
+        k=k/ok;
+        a[x%10]++;
+        k=k*a[x%10];
+        x++;
     }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
-   for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
-   }
-   cout<<endl;
-}
+    string s="codeforces";
+    for(ll i=0;i<10;i++){
+        for(ll j=0;j<a[i];j++)
+        cout<<s[i];
+    }
+    return ;
 }
 int main()
 {

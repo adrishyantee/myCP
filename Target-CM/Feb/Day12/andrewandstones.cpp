@@ -136,40 +136,44 @@ int FindMinMoves(vector<int> A, vector<int> B)
 void solve()
 {
 
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
+   ll t; cin>>t;
+   while(t--){
+   ll n; cin>>n;
+   vector<ll> arr(n);
 
-   ll c=0;
+   ll odd=0, even=0;
+
+   ll count = 0;
+
+
 
    for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
+       cin>>arr[i];
    }
 
-   sort(arr.begin(),arr.end());
-   vector<ll> ans;
+   ll noofones=0;
 
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
+   for(int i=1;i<n-1;i++){
+       if(arr[i]%2==0){
+       even++;
+       count+=arr[i]/2;
+       }
+       else{
+       odd++;
+       count+=((arr[i]+1)/2);
+       if(arr[i]==1)
+       noofones++;
+       }
    }
 
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
-    }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
-   for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
+   if(even==0 && odd>0 && (n==3||noofones==n-2)){
+       cout<<"-1"<<endl;
+       continue;
    }
-   cout<<endl;
-}
+
+   cout<<count<<endl; 
+   }
+
 }
 int main()
 {

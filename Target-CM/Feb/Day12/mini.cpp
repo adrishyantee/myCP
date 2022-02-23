@@ -136,40 +136,48 @@ int FindMinMoves(vector<int> A, vector<int> B)
 void solve()
 {
 
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
+   ll t; cin>>t;
+   while(t--){
+   ll n; cin>>n;
+   vector<ll> arr(n), b(n);
 
-   ll c=0;
+
 
    for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
+       cin>>arr[i];
    }
 
-   sort(arr.begin(),arr.end());
-   vector<ll> ans;
-
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
+   
+   for(ll i=0;i<n;i++){
+       cin>>b[i];
    }
 
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
-    }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
-   for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
+   ll ans = INT_MAX;
+
+
+
+   for(ll i=0;i<n;i++){
+
+       ll suma =0, sumb=0;
+       swap(arr[i],b[i]);
+
+
+       for(ll i=0;i<n;i++){
+           for(ll j=i+1;j<n;j++){
+               suma+=(arr[i]+arr[j])*(arr[i]+arr[j]);
+               sumb+=(b[i]+b[j])*(b[i]+b[j]);
+           }
+       }
+
+       swap(arr[i],b[i]);
+
+       ans = min(ans,(suma+sumb));
+
+        
    }
-   cout<<endl;
-}
+   cout<<ans<<endl;
+   }
+
 }
 int main()
 {

@@ -135,41 +135,89 @@ int FindMinMoves(vector<int> A, vector<int> B)
 
 void solve()
 {
-
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
-
-   ll c=0;
+    ll n; cin>>n;
+    vector<ll> arr(n);
+   vector<ll> even, odd;
 
    for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
+       cin>>arr[i];
+       if(arr[i]%2==0)
+       even.push_back(arr[i]);
+       else
+       odd.push_back(arr[i]);
    }
 
-   sort(arr.begin(),arr.end());
-   vector<ll> ans;
+   vector<ll> a = even, b = odd;
+   sort(a.begin(),a.end());
+   sort(b.begin(),b.end());
 
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
+   if(a==even && b==odd){
+       cout<<"Yes"<<endl;
    }
+   else
+   cout<<"No"<<endl;
 
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
-    }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
-   for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
-   }
-   cout<<endl;
-}
+//    ll odd = 0, even = 0;
+
+   
+//    if(a==b)
+//    {
+//        cout<<"Yes"<<endl;
+//        return;
+//    }
+
+//    for(ll i=0;i<n;i++){
+//        if(a[i]%2==0)
+//        even++;
+//        else
+//        odd++;
+//    }
+
+
+//    if((odd==n || even==n)&& a!=b){
+//        cout<<"No"<<endl;
+//        return;
+//    }
+
+//    for(ll i=0;i<n;i++){
+//        if(a[i]%2==0){
+//            ll j =i;
+//            while(j-1>=0 && a[j-1]%2!=0 ){
+//               swap(a[j],a[j-1]);
+//               j--;
+//            }
+//        }
+//        else{
+//            ll j = i;
+//            while(j+1<n && a[j+1]%2==0 ){
+//               swap(a[j],a[j+1]);
+//               j++;
+//            }
+//        }
+//    }
+
+//   ll idx = 0;
+
+
+//    for(ll i=0;i<n-1;i++){
+//        if((a[i]+a[i+1])%2!=0)
+//        {
+//            idx = i;
+//            break;
+//        }
+//    }
+
+
+
+//    for(ll i=idx+1;i<n;i++){
+//        if((a[i]+a[i+1])%2!=0){
+//            cout<<"No"<<endl;
+//            return;
+//        }
+//    }
+
+//    cout<<"Yes"<<endl;
+
 }
 int main()
 {
@@ -177,6 +225,8 @@ int main()
     freopen("Error.txt", "w", stderr);
 #endif
     fastio();
+    ll t; cin>>t;
+    while(t--)
     solve();
 #ifndef ONLINE_JUDGE
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";

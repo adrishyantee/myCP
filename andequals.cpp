@@ -132,44 +132,59 @@ int FindMinMoves(vector<int> A, vector<int> B)
     // Return the resultant operations
     return ans;
 }
+bool isSuffix(string s1, string s2)
+{
+    int n1 = s1.length(), n2 = s2.length();
+    if (n1 > n2)
+      return false;
+    for (int i=0; i<n1; i++)
+       if (s1[n1 - i - 1] != s2[n2 - i - 1])
+           return false;
+    return true;
+}
+bool isPalindrome(string S)
+{
+    // Stores the reverse of the
+    // string S
+    string P = S;
+ 
+    // Reverse the string P
+    reverse(P.begin(), P.end());
+ 
+    // If S is equal to P
+    if (S == P) {
+        // Return "Yes"
+        return true;
+    }
+    // Otherwise
+    else {
+        // return "No"
+        return false;
+    }
+}
 
 void solve()
 {
+   ll t; cin>>t;
+   while(t--){
 
-    ll t; cin>>t;
-    while(t--){
-   ll n,w; cin>>n>>w;
-   vector<pair<ll,ll>> arr(n);
+       ll n; cin>>n;
+       string s; cin>>s;
 
-   ll c=0;
+       ll zeros=0,ones=0;
+       ll count=0;
 
-   for(ll i=0;i<n;i++){
-       cin>>arr[i].first;
-       arr[i].second=i;
+       for(ll i=0;i<n;i++){
+           for(ll j=0;j<n;j++){
+               if(s[i|j]==s[i&j])
+               count++;
+           }
+       }
+
+       cout<<count<<endl;
+
    }
 
-   sort(arr.begin(),arr.end());
-   vector<ll> ans;
-
-
-   for(ll i=n-1;i>=0;i--){
-       if(c+arr[i].first<=w){
-        c+=arr[i].first;
-        ans.push_back(arr[i].second); 
-       }    
-   }
-
-   if(c<(w+1)/2){
-   cout<<-1<<endl;
-   continue;
-    }
-    cout<<ans.size()<<endl;
-   sort(ans.begin(),ans.end());
-   for(ll i=0;i<ans.size();i++){
-       cout<<ans[i]+1<<" ";
-   }
-   cout<<endl;
-}
 }
 int main()
 {
