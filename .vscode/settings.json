@@ -16,7 +16,10 @@
         "utility": "cpp",
         "map": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp",
+        "iosfwd": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

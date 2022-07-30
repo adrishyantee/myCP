@@ -3,75 +3,75 @@
 
 **1st set of basic stuffs**
 
-- [x] 1. Pattern printing problems 
-- [x] 2. time complexity analysis
-- [x] 3. linear search and circular array representation
-- [x] 4. palindrome and other numbers(perfect, Armstrong) for basic number problems
-- [x] 5. Simple Hashing Problem(frequency counting and stuffs) 
-- [X] 6. Prefix Sum Problems(1D and 2D) {codeforces } 
-- [X] 7. Sliding window technique(2 out of 5 contests) 
+- 1. Pattern printing problems 
+- 2. time complexity analysis
+- 3. linear search and circular array representation
+- 4. palindrome and other numbers(perfect, Armstrong) for basic number problems
+- 5. Simple Hashing Problem(frequency counting and stuffs) 
+- 6. Prefix Sum Problems(1D and 2D) {codeforces } 
+- 7. Sliding window technique(2 out of 5 contests) 
 
 ----
 
 **Basics of number theory**
-- [X] 1. Binary Search is a must(2/5 contests)
-- [X] 2. GCD of 2 numbers in logarithmic time(Euclidean and Extended Euclidean Algorithm) 
-- [X] 3. linear Diphantine Equation
-- [X] 4. Checking prime in sqrt(n) complexity 
-- [X] 5. Sieve of Eratosthenes(very imp to perform querry probs on the prime) 
-- [X] 6. Segmented Sieve
-- [X] 7. Finding prime factorisation of a number in logn per querry
-- [X] 8. Euler Totent Function
-- [X] 9. Fermat Little Theorum
-- [X] 10. Wilson's Theorum
+- 1. Binary Search is a must(2/5 contests)
+- 2. GCD of 2 numbers in logarithmic time(Euclidean and Extended Euclidean Algorithm) 
+- 3. linear Diphantine Equation
+- 4. Checking prime in sqrt(n) complexity 
+- 5. Sieve of Eratosthenes(very imp to perform querry probs on the prime) 
+- 6. Segmented Sieve
+- 7. Finding prime factorisation of a number in logn per querry
+- 8. Euler Totent Function
+- 9. Fermat Little Theorum
+- 10. Wilson's Theorum
 
 (gfg articles and hacker earth probs for 8,9,10)
 
 **Tougher version of number theory**
 
-- [X] 1. Finding x^n in log(n) 
-- [X] 2. Modular Arithmetic
-- [X] 3. Modular Inverse of a number
-- [X] 3. Modular Exponentiation
-- [X] 4. Chinese Remainder Theorum
-- [X] 5. Factorial Modulo Mod
-- [X] 6. Finding nCr and nPr for queries (constant time) 
+- 1. Finding x^n in log(n) 
+- 2. Modular Arithmetic
+- 3. Modular Inverse of a number
+- 3. Modular Exponentiation
+- 4. Chinese Remainder Theorum
+- 5. Factorial Modulo Mod
+- 6. Finding nCr and nPr for queries (constant time) 
 7. Inclusion Exclusion Principle (combinatorics problems) {hackerearth has wonderful bunch} {codeforces}
 
 ----
 
 
 
-- [X] 1. learn about basic sorting algorithms (bubble, selection, insertion) 
-- [X] 2. do problems which are constructive and have a lot of swapping terms in it. 
-- [X] 3. solve problems related to two pointer approach. 
+- 1. learn about basic sorting algorithms (bubble, selection, insertion) 
+- 2. do problems which are constructive and have a lot of swapping terms in it. 
+- 3. solve problems related to two pointer approach. 
 4. Bit manupulation(left shift, right shift, xor, or, and,set bit,MSB, LSB etc..) 
 5. Power set of a given array or string using BIT
 6. Number of subarrays with XOR as zero(not an algorithm but a must do problem)
 (hackerearth has a very good tutorial on bit manipulation, coding blocks too has a proper video on bit) {for problems visit hackerearth} 
 7. Problems related to greedy algorithm tag
-- [X]8. Kadane's algorithm and problems related to them
+- 8. Kadane's algorithm and problems related to them
 9. Job sequencing and activity selection problem 
 (after doing 8 and 9 go to codeforces and solve problems with greedy tag on it)
 
 ----
 
 **Time to learn recursion**
-- [X] 1. start with basic problems like finding factorial and all.
-- [X] 2. implement binary search 
-- [X] 3. implement modular exponentiation using recurison
-- [X] 4. solve recursion problems like finding subset with given and others to get a stronggrip
-- [X] 5. Learn about merge sort and quick sort 
-- [X] 6. solve problems related to merge sort
-- [X] 7. Do backtracking problems like sudoko and N Queen, it will help you when you want do DP Path problems
+- 1. start with basic problems like finding factorial and all.
+- 2. implement binary search 
+- 3. implement modular exponentiation using recurison
+- 4. solve recursion problems like finding subset with given and others to get a stronggrip
+- 5. Learn about merge sort and quick sort 
+- 6. solve problems related to merge sort
+- 7. Do backtracking problems like sudoko and N Queen, it will help you when you want do DP Path problems
 
 (for recursion you can refer to leetcode or gfg's practice where u will find recursion and backtracking problems) 
 
 **After Recursion:**
 1. Meet in the middle algorithm and problems related to it. 
 2. Divide and conquer problems{highly recommended to use codeforces only for this} 
-- [X] 3. Next greater element and next smaller element using stack
-- [X] 4. porblems related to parenthesis. 
+- 3. Next greater element and next smaller element using stack
+- 4. porblems related to parenthesis. 
 5. largest rectangular area in histogram. (concept is used in a lot of problems) 
 6. Problems related to Heap(Priority Queue) {although this gets under the greedy category but by priority queue will help you learn an inbuilt stl)
 
@@ -92,9 +92,9 @@ now the real advanced parts and the game decider
 ----
 
 **Tree Algorithm :**
-- [X] 1. Tree/Graph representation
-- [X] 2. DFS/BFS Traversal in Graph/Tree
-- [X] 3. Basic stuffs(diameter of tree, height of tree, level of tree)
+- 1. Tree/Graph representation
+- 2. DFS/BFS Traversal in Graph/Tree
+- 3. Basic stuffs(diameter of tree, height of tree, level of tree)
 4. Euler Tour of Tree(Learn and solve problems)
 5. Finding LCA using Euler Tour(14:00){efficient solution uses segment trees)
 6. Finding LCA using Binary Lifting.
@@ -105,12 +105,12 @@ now the real advanced parts and the game decider
 ----
 
 **Graphs:**
-- [X] 1. Connected Components.
-- [X] 2. Topological Sort.
-- [X] 3. Cycle Detection in Graph
-- [X] 4. Bipartite Check in graph
+1. Connected Components.
+2. Topological Sort.
+3. Cycle Detection in Graph
+4. Bipartite Check in graph
 5. SCC using Kosaraju’s  algorithm
-- [X] 6. Dijkstra’s Algorithm
+6. Dijkstra’s Algorithm
 7. Bellman Ford Algorithm
 Sources for learning :hackerearth and cpalgorithm blogs  
 (25-30 problems on the avove topics,SPOJ and codeforces,hackerearth too)

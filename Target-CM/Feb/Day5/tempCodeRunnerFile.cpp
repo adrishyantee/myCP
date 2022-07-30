@@ -1,1 +1,0 @@
-   cout<<ones<<" "<<zeros<<endl;

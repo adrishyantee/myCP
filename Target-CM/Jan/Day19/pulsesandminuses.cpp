@@ -1,1 +1,0 @@
-Day 40:  18.1.22: Solved daily challenge leetcode.
